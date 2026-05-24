@@ -1,0 +1,34 @@
+---
+title: "main-functions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{main-functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(projectr)
+```
+
+```{r}
+style_gt_journal(table, title, subtitle, percent)
+# This function should apply consistent styling to gt tables used throughout the dashboard project. The styling should match the dashboard theme "journal by customizing table  formatting elements to create a polished and uniform appearance across all tables.
+```
+
+```{r}
+plot_country_dist(data, country, order)
+# This function should create a bar graph showing the distribution of plastic types collected within a selected country. The bars should be ordered according to the user’s selected sorting direction and styled consistently with the dashboard theme.
+```
+
+```{r}
+summarize_plastics(data, group_var, summary_type)
+# This function should summarize the plastics dataset by a selected grouping variable. The user should be able to choose whether the function calculates totals, proportions, or year-over-year changes, making it useful for multiple types of dashboard summaries.
+```

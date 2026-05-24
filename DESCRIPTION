@@ -1,9 +1,19 @@
 Package: projectr
-Title: What the Package Does (One Line, Title Case)
+Title: Functions for STAT 431 Project Analysis
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    c(person(first = "Tyler",
+             family = "Kinney",
+             email = "kinneytyler101@gmail.com",
+             role = c("aut", "cre")),
+      person(first = "Greyson",
+             family = "Ballesteros",
+             email = "grballes@calpoly.edu",
+             role = "aut"))
+Description: Provides helper functions for cleaning,
+    summarizing, visualizing, and analyzing plastic pollution
+    data from Break Free From Plastic used in STAT 431
+    projects and dashboards.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
