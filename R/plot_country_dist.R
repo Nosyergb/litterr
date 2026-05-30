@@ -47,3 +47,4 @@ plot_country_dist <- function(data) {
     ) +
     ggplot2::theme_light()
 }
+

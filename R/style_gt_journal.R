@@ -57,3 +57,4 @@ style_gt_journal <- function(table, title, subtitle, percent) {
       )
     )
 }
+

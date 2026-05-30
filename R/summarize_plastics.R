@@ -30,3 +30,4 @@ summarize_plastics <- function(data) {
   map_dfr(plastic_types, Prop_change) |>
     arrange(change)
 }
+
