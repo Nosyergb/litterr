@@ -2,11 +2,11 @@ Package: projectr
 Title: Functions for STAT 431 Project Analysis
 Version: 0.0.0.9000
 Authors@R: 
-    c(person(first = "Tyler",
+    c(person(given = "Tyler",
              family = "Kinney",
              email = "kinneytyler101@gmail.com",
              role = c("aut", "cre")),
-      person(first = "Greyson",
+      person(given = "Greyson",
              family = "Ballesteros",
              email = "grballes@calpoly.edu",
              role = "aut"))
@@ -19,3 +19,6 @@ License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

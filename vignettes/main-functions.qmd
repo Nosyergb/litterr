@@ -20,7 +20,7 @@ library(projectr)
 
 ```{r}
 style_gt_journal(table, title, subtitle, percent)
-# This function should apply consistent styling to gt tables used throughout the dashboard project. The styling should match the dashboard theme "journal by customizing table  formatting elements to create a polished and uniform appearance across all tables.
+# This function should apply consistent styling to gt tables used throughout the dashboard project. The styling should match the dashboard theme "journal by customizing table formatting elements to create a polished and uniform appearance across all tables.
 ```
 
 ```{r}

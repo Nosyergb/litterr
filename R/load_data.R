@@ -11,6 +11,3 @@ load_data <- function() {
 
   return(plastics)
 }
-
-
-
