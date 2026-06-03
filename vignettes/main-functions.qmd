@@ -19,25 +19,31 @@ library(projectr)
 ```
 
 ```{r}
-style_gt_journal(table, title, subtitle, percent)
+style_gt_journal(table, title, subtitle, percent, color_col)
 # Applies consistent journal-theme styling to a gt table. 
-# The function adds a title and optional subtitle, formats selected columns 
-# as percentages, applies optional color gradients, and standardizes table 
-# headers, borders, row striping, padding, and dashboard theme colors.
+# The function adds a required title and optional subtitle, formats selected 
+# percent columns, applies optional color gradients to selected columns, and 
+# standardizes headers, borders, row striping, padding, and theme colors.
 ```
 
 ```{r}
-plot_country_dist(data, country, order)
-# Creates a journal-themed bar chart showing the distribution of plastic 
-# types collected in a selected country. The function filters the data by 
-# country, summarizes plastic type totals, orders the bars according to the 
-# selected sorting direction, and applies consistent dashboard styling.
+plot_plastic_country_covid(
+  data, 
+  label_n, 
+  label_largest_increase, 
+  point_color, 
+  point_size, 
+  point_alpha
+)
+# Creates a scatterplot comparing plastic waste totals by country before 
+# and during COVID. The function labels either the countries with the largest 
+# increases from 2019 to 2020 or the countries with the largest 2020 totals, 
+# with user-controlled label count, point color, point size, and transparency.
 ```
 
 ```{r}
 summarize_plastics(data, type)
-# Summarizes plastic type composition across years. The function calculates 
-# each plastic type’s 2020 proportion, change in proportion from the previous 
-# year, year-over-year change in total amount, or all summary measures, 
-# depending on the selected type argument.
+# Summarizes plastic type composition changes from 2019 to 2020. 
+# The function uses the selected type argument to return changes in 
+# proportions, year-over-year changes in totals, or both summary measures.
 ```
