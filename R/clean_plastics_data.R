@@ -7,7 +7,6 @@
 #'
 #' @return A cleaned data frame.
 #' @importFrom dplyr filter
-#' @export
 clean_plastics_data <- function(data = load_data(),
                                 remove_empty_country = FALSE) {
 

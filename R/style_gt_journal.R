@@ -1,20 +1,20 @@
 #' Style gt table with journal dashboard formatting
 #'
-#' @param table A gt table.
+#' @param table A tibble.
 #' @param title Table title as string.
 #' @param subtitle Table subtitle as string.
-#' @param percent Column or vector of columns to format as percentages.
-#' @param color_col Column or vector of columns to color.
+#' @param percent_cols Column or vector of columns to format as percentages.
+#' @param color_cols Column or vector of columns to color.
 #'
 #' @return A styled gt table.
-#' @importFrom gt tab_header md fmt_percent tab_options tab_style cell_text cells_column_labels cell_borders cells_title px data_color everything
+#' @importFrom gt tab_header md fmt_percent tab_options tab_style cell_text cells_column_labels cell_borders cells_title px data_color everything gt
 #' @importFrom scales col_numeric
 #' @export
-style_gt_journal <- function(table,
-                             title,
+style_gt_journal <- function(table = load_data() |> summarize_plastics_prop(),
+                             title = "Plastic Type Changes",
                              subtitle = NULL,
-                             percent = NULL,
-                             color_col = NULL) {
+                             percent_cols = NULL,
+                             color_cols = NULL) {
 
   if (!is.character(title) | (length(title) != 1)) {
     stop("title must be a single character string.")
@@ -25,6 +25,7 @@ style_gt_journal <- function(table,
   }
 
   styled_table <- table |>
+    gt() |>
     tab_header(
       title = md(title),
       subtitle = subtitle
@@ -55,18 +56,18 @@ style_gt_journal <- function(table,
       heading.padding = px(10)
     )
 
-  if (!is.null(percent)) {
+  if (!is.null(percent_cols)) {
     styled_table <- styled_table |>
       fmt_percent(
-        columns = percent,
+        columns = percent_cols,
         decimals = 2
       )
   }
 
-  if (!is.null(color_col)) {
+  if (!is.null(color_cols)) {
     styled_table <- styled_table |>
       data_color(
-        columns = color_col,
+        columns = color_cols,
         fn = col_numeric(
           palette = c("lightgreen", "white", "#D95C5C"),
           domain = NULL

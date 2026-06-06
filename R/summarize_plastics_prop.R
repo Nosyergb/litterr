@@ -7,7 +7,7 @@
 #' @importFrom dplyr filter group_by summarize arrange mutate lag ungroup select all_of
 #' @importFrom tidyr pivot_longer
 #' @export
-summarize_plastics <- function(data = load_data(), type = "both") {
+summarize_plastics_prop <- function(data = load_data(), type = "both") {
 
   if (!type %in% c("prop", "yoy", "both")) {
     stop("type must be 'prop', 'yoy', or 'both'")

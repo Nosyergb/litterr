@@ -5,23 +5,23 @@
 \title{Style gt table with journal dashboard formatting}
 \usage{
 style_gt_journal(
-  table,
-  title,
+  table = summarize_plastics_prop(load_data()),
+  title = "Plastic Type Changes",
   subtitle = NULL,
-  percent = NULL,
-  color_col = NULL
+  percent_cols = NULL,
+  color_cols = NULL
 )
 }
 \arguments{
-\item{table}{A gt table.}
+\item{table}{A tibble.}
 
 \item{title}{Table title as string.}
 
 \item{subtitle}{Table subtitle as string.}
 
-\item{percent}{Column or vector of columns to format as percentages.}
+\item{percent_cols}{Column or vector of columns to format as percentages.}
 
-\item{color_col}{Column or vector of columns to color.}
+\item{color_cols}{Column or vector of columns to color.}
 }
 \value{
 A styled gt table.
