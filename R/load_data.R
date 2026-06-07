@@ -5,7 +5,7 @@
 load_data <- function() {
   file_path <- system.file(
     "Updated_Plastics.csv",
-    package = "projectr"
+    package = "litterr"
   )
 
   read.csv(file_path)

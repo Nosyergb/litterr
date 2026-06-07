@@ -1,4 +1,4 @@
-Package: projectr
+Package: litterr
 Title: Functions for STAT 431 Project Analysis
 Version: 0.0.0.9000
 Authors@R: 
@@ -22,3 +22,4 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Config/roxygen2/version: 8.0.0
+RoxygenNote: 7.3.3

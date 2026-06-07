@@ -15,8 +15,10 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(projectr)
+library(litterr)
 ```
+
+## Main Functions
 
 ```{r}
 animate_country_plastics(data, country_name, colors, nframes, fps)
@@ -28,6 +30,14 @@ animate_country_plastics(data, country_name, colors, nframes, fps)
   #colors = c("#FDECEC", "#F8D6D6", "#F1ADAD", "#EA8585", "#E35C5C", "#DE4C4C", "#D95C5C"),
   #nframes = 80,
   #fps = 10
+#)
+
+#Example
+#animate_country_plastics(
+  #data = load_data(),
+  #country_name = "India",
+  #nframes = 40,
+  #fps = 5
 #)
 
 # data = TidyTuesday plastics dataset; country_name = country as a string; colors = 7 colors; nframes = number of frames; fps = frames per second.
@@ -45,6 +55,13 @@ compare_country_plastic_types(data, country_one, country_two)
   #country_two = no default
 #)
 
+#Example
+#compare_country_plastic_types(
+  #data = load_data(),
+  #country_one = "China",
+  #country_two = "India"
+#)
+
 # data = TidyTuesday plastics dataset; country_one = first country as a string; country_two = second country as a string.
 
 # This function performs a chi-square test of independence to determine whether the distribution of plastic types differs between two selected countries. The data are cleaned by removing Grand Total rows and EMPTY country values, the country names are validated, and plastic type counts are aggregated before conducting the statistical test. The function returns a chi-square test object containing the test statistic, degrees of freedom, and p-value.
@@ -52,7 +69,9 @@ compare_country_plastic_types(data, country_one, country_two)
 
 ```{r}
 load_data()
-# Example: load_data()
+
+#Example 
+#load_data()
 
 # This function has no inputs.
 
@@ -72,6 +91,16 @@ plot_country_dist(data, label_n, label_largest_increase, point_color, point_size
   #point_alpha = 0.7
 #)
 
+#Example
+#plot_country_dist(
+  #data = load_data(),
+  #label_n = 5,
+  #label_largest_increase = TRUE,
+  #point_color = "steelblue",
+  #point_size = 4,
+  #point_alpha = 0.6
+#)
+
 # data = TidyTuesday plastics dataset; label_n = number of countries to label; label_largest_increase = TRUE/FALSE; point_color = point color; point_size = point size; point_alpha = point transparency.
 
 # This function creates a scatterplot comparing each country's total plastic waste in 2019 and 2020. It cleans the data, summarizes total plastic waste by country and year, reshapes the data so 2019 and 2020 totals can be compared, and labels selected countries either by largest 2020 totals or largest increase from 2019 to 2020.
@@ -89,6 +118,20 @@ style_gt_journal(table, title, subtitle, percent_cols, color_cols)
   #color_cols = NULL
 #)
 
+#Example
+#plastic_summary <- summarize_plastics_prop(
+  #data = plastics,
+  #type = "both"
+#)
+
+#style_gt_journal(
+  #table = plastic_summary,
+  #title = "Plastic Type Changes from 2019 to 2020",
+  #subtitle = "Proportion and year-over-year changes",
+  #percent_cols = c(prop_2020, prop_change, yoy_change),
+  #color_cols = c(prop_change, yoy_change)
+#)
+
 # table = tibble/data frame; title = table title; subtitle = optional subtitle; percent_cols = columns to format as percentages; color_cols = columns to color.
 
 # This function applies consistent journal-style formatting to gt tables used throughout the dashboard project. It adds a title and optional subtitle, formats selected columns as percentages, optionally applies color gradients to selected columns, and customizes table styling to create a polished and uniform appearance across all tables.
@@ -101,6 +144,9 @@ summarize_country_totals(data)
 #summarize_country_totals(
   #data = load_data()
 #)
+
+#Example
+# summarize_country_totals(data = load_data())
 
 # data = TidyTuesday plastics dataset
 
@@ -116,6 +162,12 @@ summarize_plastics_prop(data, type)
   #type = "both"
 #)
 
+#Example
+#summarize_plastics_prop(
+  #data = load_data(),
+  #type = "yoy"
+#)
+
 # data = TidyTuesday plastics dataset; type = "prop", "yoy", or "both".
 
 # This function summarizes plastic type composition in 2020 and compares it to the previous available year. It calculates the proportion of each plastic type, the change in proportion from the previous year, and the year-over-year change in total amount. Depending on the value of type, the function returns proportional changes ("prop"), year-over-year changes ("yoy"), or both measures in a single tibble.
@@ -125,6 +177,11 @@ summarize_plastics_prop(data, type)
 wrangle_plastic_types(data)
 
 #Default values
+#wrangle_plastic_types(
+  #data = load_data()
+#)
+
+#Example
 #wrangle_plastic_types(
   #data = load_data()
 #)
