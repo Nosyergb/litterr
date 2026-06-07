@@ -42,7 +42,7 @@ load_data()
 
 # This function has no inputs.
 
-# This function loads the Break Free From Plastic dataset from the TidyTuesday project using the tidytuesdayR package. It retrieves the plastics dataset from the January 26, 2021 release and returns it as a data frame for use in analyses, visualizations, and package functions.
+# This function loads the merged plastics dataset from the inst folder of the package. It reads the saved plastics data file bundled with the package and returns it as a data frame for use in analyses, visualizations, and package functions.
 ```
 
 ```{r}
